@@ -10,3 +10,7 @@ A production tracker and asset manager for Blender projects: sequences, shots an
 - Game- or project-specific tools come as plugins.
 
 The detailed plan follows in `docs/development-plan.md`.
+
+## License
+
+Apache-2.0, see `LICENSE` and `NOTICE`. Dependencies keep their own licenses: all permissive except pystray (LGPL-3.0), which Cairn only imports, unmodified.
