@@ -1,0 +1,136 @@
+/* Cairn theme: colors and base controls. Served at /theme.css so plugin pages look the same. */
+:root {
+  --bg: #0d1016;
+  --bg-deep: #0a0d12;
+  --bar: #0f1219;
+  --panel: #131722;
+  --panel-2: #161b27;
+  --raised: #1a1f2c;
+  --raised-hover: #222838;
+  --hover: #1a2030;
+  --hover-soft: #141925;
+  --select: #252c3d;
+  --group: #10131b;
+  --line: #232a3b;
+  --line-2: #2a3248;
+  --line-soft: #1a2030;
+  --tag: #1f2533;
+  --fg: #e6e9f0;
+  --soft: #c9cfdc;
+  --muted: #8f98ad;
+  --accent: #f2a35a;
+  --accent-hover: #f6b36f;
+  --accent-text: #f2a35a;
+  --link-hover: #ffc58f;
+  --accent-fg: #1a1208;
+  --teal: #7cc7d2;
+  --ok: #6fcf86;
+  --bad: #f08080;
+  --bad-bg: #2a1619;
+  --shade: rgba(6, 8, 12, .7);
+  --shadow: rgba(0, 0, 0, .55);
+  --st-ns: #1f2533; --st-ns-fg: #8f98ad;
+  --st-wip: #3a2a17; --st-wip-fg: #f2a35a;
+  --st-rev: #163238; --st-rev-fg: #7cc7d2;
+  --st-ret: #3a1c1f; --st-ret-fg: #f08080;
+  --st-app: #17321f; --st-app-fg: #6fcf86;
+  --st-skip: #181c26; --st-skip-fg: #5d6680;
+  --sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", Consolas, ui-monospace, monospace;
+  --display: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+/* light theme: set by theme.js (Settings → Appearance), also used by plugin pages that load /theme.js */
+:root[data-theme="light"] {
+  --bg: #f4f6f9;
+  --bg-deep: #e9ecf2;
+  --bar: #ffffff;
+  --panel: #ffffff;
+  --panel-2: #f5f7fa;
+  --raised: #eef1f6;
+  --raised-hover: #e3e8f0;
+  --hover: #e9eef6;
+  --hover-soft: #f0f3f8;
+  --select: #dce4f0;
+  --group: #eef1f6;
+  --line: #dde2ea;
+  --line-2: #c9d0dc;
+  --line-soft: #e6e9ef;
+  --tag: #e9edf3;
+  --fg: #1b2130;
+  --soft: #3b4456;
+  --muted: #5f6a7e;
+  --accent: #f2a35a;
+  --accent-hover: #f6b36f;
+  --accent-text: #b05c12;
+  --link-hover: #8a4508;
+  --accent-fg: #1a1208;
+  --teal: #1f7c8a;
+  --ok: #2c8a47;
+  --bad: #c23b3b;
+  --bad-bg: #fdecec;
+  --shade: rgba(20, 26, 40, .35);
+  --shadow: rgba(20, 26, 40, .2);
+  --st-ns: #e9edf3; --st-ns-fg: #5f6a7e;
+  --st-wip: #fde9d4; --st-wip-fg: #9a4f0c;
+  --st-rev: #d9f0f3; --st-rev-fg: #17636e;
+  --st-ret: #fbe0e0; --st-ret-fg: #a83232;
+  --st-app: #dcf2e2; --st-app-fg: #246f3a;
+  --st-skip: #eef0f4; --st-skip-fg: #7a8396;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font: 14px/1.4 var(--sans); }
+a { color: var(--accent-text); }
+a:hover { color: var(--link-hover); }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.mono { font-family: var(--mono); }
+.muted { color: var(--muted); }
+.soft { color: var(--soft); }
+.small { font-size: 12px; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; height: 32px; padding: 0 12px;
+  border-radius: 7px; border: 1px solid var(--line-2); background: var(--raised); color: var(--fg); font-weight: 600;
+  font-size: 13px; cursor: pointer; text-decoration: none; white-space: nowrap; }
+.btn:hover { background: var(--raised-hover); color: var(--fg); }
+.btn:disabled { opacity: .45; cursor: default; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+.btn.primary:hover { background: var(--accent-hover); }
+.btn.ghost { background: transparent; border-color: transparent; color: var(--soft); }
+.btn.ghost:hover { background: var(--hover); }
+.btn.small { height: 26px; padding: 0 8px; font-size: 12px; }
+.btn.danger { color: var(--bad); }
+
+.field, input.field, select.field, textarea.field { background: var(--panel-2); border: 1px solid var(--line-2); border-radius: 7px;
+  color: var(--fg); padding: 6px 10px; min-height: 32px; font-size: 13px; }
+textarea.field { resize: vertical; }
+label.stack { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--muted); }
+label.check { display: flex; align-items: center; gap: 7px; font-size: 13px; cursor: pointer; }
+input[type=checkbox], input[type=radio] { accent-color: var(--accent); width: 15px; height: 15px; margin: 0; }
+
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+.label { font: 500 10.5px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.tag { display: inline-flex; align-items: center; gap: 4px; height: 20px; padding: 0 7px; border-radius: 4px; background: var(--tag);
+  color: var(--soft); font: 500 11px var(--mono); white-space: nowrap; text-decoration: none; }
+a.tag:hover { background: var(--select); color: var(--fg); }
+.pill { display: inline-flex; align-items: center; gap: 5px; height: 22px; padding: 0 8px; border-radius: 5px; font-weight: 600;
+  font-size: 11px; white-space: nowrap; border: 0; }
+.pill.ns { background: var(--st-ns); color: var(--st-ns-fg); }
+.pill.wip { background: var(--st-wip); color: var(--st-wip-fg); }
+.pill.rev { background: var(--st-rev); color: var(--st-rev-fg); }
+.pill.ret { background: var(--st-ret); color: var(--st-ret-fg); }
+.pill.app { background: var(--st-app); color: var(--st-app-fg); }
+.pill.skip { background: var(--st-skip); color: var(--st-skip-fg); }
+.kbd { font: 500 10.5px var(--mono); color: var(--muted); border: 1px solid var(--line-2); border-radius: 4px; padding: 1px 5px; }
+
+table.grid { border-collapse: collapse; width: 100%; }
+table.grid th { font: 500 10.5px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); text-align: left;
+  padding: 8px; border-bottom: 1px solid var(--line); white-space: nowrap; position: sticky; top: 0; background: var(--bg); z-index: 1; }
+table.grid td { padding: 6px 8px; border-bottom: 1px solid var(--line-soft); vertical-align: middle; }
+table.grid tr.row { cursor: pointer; }
+table.grid tr.row:hover td { background: var(--hover-soft); }
+table.grid tr.sel td { background: var(--hover); }
+.bar { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; display: flex; }
+.empty { color: var(--muted); padding: 24px; text-align: center; }
