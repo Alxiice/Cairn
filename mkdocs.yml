@@ -1,0 +1,60 @@
+site_name: Cairn
+site_description: A production tracker and asset manager for small Blender projects.
+site_url: https://alxiice.github.io/Cairn/
+repo_url: https://github.com/Alxiice/Cairn
+repo_name: Alxiice/Cairn
+edit_uri: edit/main/docs/
+copyright: Apache License 2.0
+
+nav:
+  - Home: index.md
+  - Installation: install.md
+  - Using Cairn: usage.md
+  - Plugins: plugins.md
+  - Development:
+      - Contributing: contributing.md
+      - Development plan: development-plan.md
+  - Changelog: changelog.md
+
+theme:
+  name: material
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Dark theme
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Light theme
+  features:
+    - navigation.instant
+    - navigation.footer
+    - navigation.top
+    - content.code.copy
+    - content.tabs.link
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.keys
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets:
+      check_paths: true

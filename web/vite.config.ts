@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 
-// `npm run dev` serves the UI on 5173 and forwards the API to a server started with `py -m cairn serve`.
+// `npm run dev` serves the UI on 5173 and forwards the API to a server started with `python -m cairn serve`.
 export default defineConfig({
   plugins: [svelte()],
   server: {

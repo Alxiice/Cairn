@@ -1,0 +1,7 @@
+# Tool settings only: Cairn runs from this folder (python -m cairn), it is not an installable package yet.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["cairn"]

@@ -171,7 +171,7 @@
     <section class="panel box">
       <b>Server</b>
       <span class="muted small">Cairn {health?.version} · Blender on the server: <span class="mono">{health?.blender || 'not found'}</span></span>
-      <span class="muted small">Address: <span class="mono">{location.origin}</span>. To share a project, run <span class="mono">py -m cairn serve --host 0.0.0.0</span> on one machine and open its address from the others (no login yet: trusted network only).</span>
+      <span class="muted small">Address: <span class="mono">{location.origin}</span>. To share a project, run <span class="mono">python -m cairn serve --host 0.0.0.0</span> on one machine and open its address from the others (no login yet: trusted network only).</span>
     </section>
   </div>
 </div>

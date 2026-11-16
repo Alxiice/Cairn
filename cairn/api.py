@@ -1,7 +1,7 @@
 """HTTP API over the store (REST + JSON), live change events (Server-Sent Events), plugin routes, and the web UI.
 
 The UI only talks to this API, so the same server can run inside the desktop app (127.0.0.1) or on another
-machine for a team (`py -m cairn serve --host 0.0.0.0`). There is no authentication yet: share it only on
+machine for a team (`python -m cairn serve --host 0.0.0.0`). There is no authentication yet: share it only on
 a trusted network.
 """
 from __future__ import annotations
@@ -238,7 +238,7 @@ def create_app(data_dir: Path | str, plugin_folders: list[str] | None = None, bl
 
     @r.post("/server/{action}")
     def control_server(action: Literal["stop", "restart"], request: Request):
-        """Stops or restarts a tray server (py -m cairn stop / restart). Only from the server's own machine."""
+        """Stops or restarts a tray server (python -m cairn stop / restart). Only from the server's own machine."""
         if request.client is None or request.client.host not in ("127.0.0.1", "::1", "testclient"):
             raise HTTPException(403, "Only the server's own machine can stop or restart it")
         do = getattr(app.state, f"{action}_server", None)
