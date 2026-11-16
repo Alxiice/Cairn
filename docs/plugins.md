@@ -1,6 +1,6 @@
 # Plugins
 
-A plugin is a folder with a `plugin.json`. The server loads the plugins of its **plugin folders**; a plugin folder is a plugin, or holds plugin folders (`E:\Documents\TRAVAIL\OW\apps\CinematicOW` holds `cow/`).
+A plugin is a folder with a `plugin.json`. The server loads the plugins of its **plugin folders**; a plugin folder is a plugin, or holds plugin folders (for example, a folder that holds `cow/`).
 
 Adding a plugin folder:
 

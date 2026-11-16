@@ -6,7 +6,7 @@ viewfinder brackets at the bottom left and top right, and the record dot at the 
 Faces are computed, not stroked: outer edges stay on the shape's lines, faces are separated by a constant
 seam, and corners are rounded with quadratic curves.
 Run: py -I make_logo.py   (writes the SVGs next to this file; then copy logo-icon.svg to web/public/logo.svg
-and run make_icons.py)
+and docs/assets/logo.svg, and run make_icons.py)
 """
 import math
 from pathlib import Path
