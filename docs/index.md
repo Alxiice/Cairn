@@ -8,6 +8,8 @@ Cairn is a server and a web UI. The server keeps the database and the project fi
 
 [Install Cairn](install.md){ .md-button .md-button--primary } [Use it](usage.md){ .md-button }
 
+![The shots tracker](assets/screenshots/shots.png)
+
 ## Workspaces
 
 | Workspace | |
@@ -22,6 +24,23 @@ Cairn is a server and a web UI. The server keeps the database and the project fi
 | **Settings** | Project details and asset types, task templates, appearance (dark, light or like the system), plugins and plugin folders, the server. |
 | **Search** (++ctrl+k++) | Shots, assets, versions and notes, with keyboard navigation. |
 | **Plugins** | Each plugin can add its own workspace to the rail, with its icon. |
+
+## A tour
+
+![Home: tasks in progress and activity](assets/screenshots/home.png)
+*Home: your tasks in progress, retakes and reviews first, and the project's activity.*
+
+![A shot's page: task pipeline, versions and details](assets/screenshots/shot.png)
+*A shot's page: the task pipeline, its versions and its details.*
+
+![The asset library with its facets](assets/screenshots/assets.png)
+*The asset library, filtered by type, status, task and use.*
+
+![Review: two versions compared with a wipe](assets/screenshots/review.png)
+*Review: two versions compared with a wipe, with the notes on this shot.*
+
+![Notes: threads linked to shots and assets](assets/screenshots/notes.png)
+*Notes: threads linked to shots, assets, versions and tasks.*
 
 ## Not yet
 
