@@ -1,27 +1,78 @@
-# Cairn
+---
+template: home.html
+title: Cairn
+hide:
+  - navigation
+  - toc
+---
 
-**Cairn** is a production tracker and asset manager for small Blender projects. It organizes a project's sequences, shots and assets and the tasks to make them. Every published version is kept as a file, and the team works through notes with replies and attachments and reviews renders side by side.
+<figure class="cairn-showcase" markdown>
+![The shots tracker](assets/screenshots/shots.png)
+</figure>
 
-It aims to help creators take a project from start to finish. A plugin system adds tools specific to a project or a game.
+<p class="cairn-home-lead">Cairn is a server and a web UI. The server keeps the database and the project files; the UI runs in a desktop window or in a browser, so one machine can serve a project to several others.</p>
 
-Cairn is a server and a web UI. The server keeps the database and the project files. The UI runs in a desktop window or in a browser, so one machine can serve a project to several others.
+<div class="grid cards" markdown>
 
-[Install Cairn](install.md){ .md-button .md-button--primary } [Use it](usage.md){ .md-button }
+-   :material-table-large:{ .lg .middle } **Track every shot**
 
-## Workspaces
+    ---
 
-| Workspace | |
-|---|---|
-| **Home** | Tasks in progress (retakes and reviews first), activity, progress by sequence, recently updated shots and assets. |
-| **Sequences** | Add, rename, describe, reorder and delete sequences (their shots stay, without a sequence). The selected one lists its shots, with **+ Shot** and **Delete**. |
-| **Shots** | The tracker table: one row per shot, grouped by sequence (fold, progress), one column per task with its status (editable in place) and latest version, open notes, last update. A dash means the shot has no such task. Click a row for the side panel; double-click it or click its name for the shot's page. |
-| **Assets** | The library: facets (type, overall status, task, used or not), cards with a size slider (at its minimum, a list), and a side panel with the pipeline, what the asset uses and where it is used. |
-| **Shot or asset page** | The task pipeline: status, versions, **+** to publish, **✕** to remove (a task with versions is disabled instead, its history kept), **+ custom task**, **Apply a template…**. Tabs: Versions (filter by task, latest only, Open in Blender, Review, Note), Notes, Assets or Uses, Used in. A details panel (title, description, sequence or type, head and tail, cut in and out). Click the thumbnail to choose an image. |
-| **Review** | Pick a shot or asset and a version (a video, an image, or a render folder's color layer). Compare two versions with a wipe or side by side, step frame by frame at the project's frame rate, follow the note marks on the timeline, draw on the frame and post a note with the drawing attached, optionally setting the task to Retake. |
-| **Notes** | Open, assigned to me, closed, all. Each thread links to shots, assets, versions and tasks, holds attachments (images shown) and replies. |
-| **Settings** | Project details and asset types, task templates, appearance (dark, light or like the system), plugins and plugin folders, the server. |
-| **Search** (++ctrl+k++) | Shots, assets, versions and notes, with keyboard navigation. |
-| **Plugins** | Each plugin can add its own workspace to the rail, with its icon. |
+    One row per shot, one column per task. Statuses change in place, retakes and reviews come first.
+
+-   :material-cube-outline:{ .lg .middle } **An asset library**
+
+    ---
+
+    Characters, props and sets with their pipeline, what they use and where they are used.
+
+-   :material-layers-triple-outline:{ .lg .middle } **Versions you never lose**
+
+    ---
+
+    Every publish is a new file in the project folder, never overwritten. Open it in Blender in one click.
+
+-   :material-compare-horizontal:{ .lg .middle } **Review side by side**
+
+    ---
+
+    Wipe between two versions, step frame by frame, draw on the frame and post the note.
+
+-   :material-message-reply-text-outline:{ .lg .middle } **Notes that stay linked**
+
+    ---
+
+    Threads tied to shots, assets, versions and tasks, with replies, attachments and assignees.
+
+-   :material-puzzle-outline:{ .lg .middle } **Made to be extended**
+
+    ---
+
+    Plugins add their own server routes and their own workspace in the rail. [Write one](plugins.md)
+
+</div>
+
+## Slideshow
+
+<div class="cairn-slides" data-interval="5000">
+  <div class="cairn-slides__tabs" role="tablist">
+    <button class="cairn-slides__tab is-active" role="tab" aria-selected="true" data-caption="Home: your tasks in progress, retakes and reviews first, and the project's activity.">Home</button>
+    <button class="cairn-slides__tab" role="tab" aria-selected="false" data-caption="A shot's page: the task pipeline, its versions and its details.">Shot page</button>
+    <button class="cairn-slides__tab" role="tab" aria-selected="false" data-caption="The asset library, filtered by type, status, task and use.">Assets</button>
+    <button class="cairn-slides__tab" role="tab" aria-selected="false" data-caption="Review: two versions compared with a wipe, with the notes on this shot.">Review</button>
+    <button class="cairn-slides__tab" role="tab" aria-selected="false" data-caption="Notes: threads linked to shots, assets, versions and tasks.">Notes</button>
+  </div>
+  <div class="cairn-slides__stage" data-tilt>
+    <div class="cairn-slides__frames">
+      <img class="cairn-slides__frame is-active" src="assets/screenshots/home.png" alt="Home: your tasks in progress, retakes and reviews first, and the project's activity.">
+      <img class="cairn-slides__frame" src="assets/screenshots/shot.png" alt="A shot's page: the task pipeline, its versions and its details." loading="lazy">
+      <img class="cairn-slides__frame" src="assets/screenshots/assets.png" alt="The asset library, filtered by type, status, task and use." loading="lazy">
+      <img class="cairn-slides__frame" src="assets/screenshots/review.png" alt="Review: two versions compared with a wipe, with the notes on this shot." loading="lazy">
+      <img class="cairn-slides__frame" src="assets/screenshots/notes.png" alt="Notes: threads linked to shots, assets, versions and tasks." loading="lazy">
+    </div>
+  </div>
+  <p class="cairn-slides__caption">Home: your tasks in progress, retakes and reviews first, and the project's activity.</p>
+</div>
 
 ## Not yet
 

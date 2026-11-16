@@ -21,6 +21,8 @@ And organize the production around tasks, and manage the production through vers
 
 This is aimed to be a tool that helps creators to organize and manage their project go from the start to the end. It integrates a plugin system to help adding specific tools for projects.
 
+<p align="center"><img src="docs/assets/screenshots/shots.png" alt="The shots tracker" width="900"></p>
+
 ## Quick start
 
 Needs Python 3.11+ and Node 20.19+ (only to build the UI). On Windows (PowerShell):

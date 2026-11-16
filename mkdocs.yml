@@ -18,25 +18,29 @@ nav:
 
 theme:
   name: material
+  custom_dir: overrides
+  font:
+    text: Inter
+    code: JetBrains Mono
   logo: assets/logo.svg
   favicon: assets/logo.svg
   icon:
     repo: fontawesome/brands/github
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: blue grey
-      accent: deep orange
-      toggle:
-        icon: material/weather-night
-        name: Dark theme
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: blue grey
-      accent: deep orange
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: Light theme
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Dark theme
   features:
     - navigation.instant
     - navigation.footer
@@ -45,9 +49,18 @@ theme:
     - content.tabs.link
     - search.highlight
 
+extra_css:
+  - stylesheets/cairn.css
+extra_javascript:
+  - javascripts/cairn.js
+
 markdown_extensions:
   - admonition
   - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - tables
   - toc:
       permalink: true

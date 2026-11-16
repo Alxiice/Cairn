@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- **Docs**: screenshots of the app on the documentation home and in the README.
+- **Docs**: a new theme in the app's colors and an animated home page (a cairn building itself above a night scene, a slideshow of the app that tilts under the mouse). The workspaces table moves to Using Cairn.
+
 ## 0.1.0: 2026-11-16
 
 First version: a production tracker and asset manager for Blender projects. A Python server (FastAPI + SQLite) holds every rule; a web UI (Svelte 5 + TypeScript) only calls its HTTP API, in a native desktop window (pywebview) on Windows, macOS and Linux, or in a browser on other machines.
