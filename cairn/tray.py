@@ -42,6 +42,8 @@ def running(url: str, timeout: float = 1.0) -> bool:
 
 def port_free(host: str, port: int) -> bool:
     with socket.socket() as s:
+        if sys.platform != "win32":  # like uvicorn: connections left in TIME_WAIT by a server that just stopped do not block it
+            s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         try:
             s.bind((host, port))
             return True
