@@ -68,7 +68,7 @@ The **tray server** (`cairn/tray.py`) runs the server in the background with an 
 Run them before you open a pull request. The GitHub workflows run them too.
 
 ```sh
-python -m pytest                  # store, API and tray server
+python -m pytest --cov            # store, API and tray server, with coverage
 cd web; npm run check; npm run build   # types and build
 mkdocs build --strict             # documentation
 ```

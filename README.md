@@ -1,5 +1,10 @@
 <img src="assets/logo.svg" alt="Cairn" height="64">
 
+[![Tests](https://github.com/Alxiice/Cairn/actions/workflows/tests.yml/badge.svg)](https://github.com/Alxiice/Cairn/actions/workflows/tests.yml)
+[![Coverage](https://img.shields.io/endpoint?url=https://alxiice.github.io/Cairn/coverage/badge.json)](https://alxiice.github.io/Cairn/coverage/)
+[![Docs](https://github.com/Alxiice/Cairn/actions/workflows/docs.yml/badge.svg)](https://alxiice.github.io/Cairn/)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+
 **Cairn** is a production tracker and asset manager for small Blender projects. It helps organizing:
 - sequences
 - shots
