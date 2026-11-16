@@ -1,9 +1,16 @@
-<img src="assets/logo.svg" alt="Cairn" height="64">
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-on-dark.svg">
+    <img src="assets/logo.svg" alt="Cairn" width="520">
+  </picture>
+</p>
 
-[![Tests](https://github.com/Alxiice/Cairn/actions/workflows/tests.yml/badge.svg)](https://github.com/Alxiice/Cairn/actions/workflows/tests.yml)
-[![Coverage](https://img.shields.io/endpoint?url=https://alxiice.github.io/Cairn/coverage/badge.json)](https://alxiice.github.io/Cairn/coverage/)
-[![Docs](https://github.com/Alxiice/Cairn/actions/workflows/docs.yml/badge.svg)](https://alxiice.github.io/Cairn/)
-[![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+<p align="center">
+  <a href="https://github.com/Alxiice/Cairn/actions/workflows/tests.yml"><img src="https://github.com/Alxiice/Cairn/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
+  <a href="https://alxiice.github.io/Cairn/coverage/"><img src="https://img.shields.io/endpoint?url=https://alxiice.github.io/Cairn/coverage/badge.json" alt="Coverage"></a>
+  <a href="https://github.com/Alxiice/Cairn/actions/workflows/docs.yml"><img src="https://github.com/Alxiice/Cairn/actions/workflows/docs.yml/badge.svg" alt="Docs"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-blue" alt="License"></a>
+</p>
 
 **Cairn** is a production tracker and asset manager for small Blender projects. It helps organizing:
 - sequences
