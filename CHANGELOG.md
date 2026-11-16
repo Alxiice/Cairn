@@ -3,6 +3,7 @@
 ## Unreleased
 
 - **Docs**: screenshots of the app on the documentation home and in the README.
+- **Docs**: a new theme in the app's colors and an animated home page (a cairn building itself above a night scene, a slideshow of the app that tilts under the mouse). The workspaces table moves to Using Cairn.
 
 ## 0.1.0: 2026-11-16
 

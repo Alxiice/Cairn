@@ -1,0 +1,94 @@
+{% extends "main.html" %}
+
+{#- The landing page: an animated night scene where a cairn builds itself, stone by stone, above the content of index.md. -#}
+
+{% block tabs %}
+{{ super() }}
+<section class="cairn-hero" data-md-color-scheme="slate">
+  <div class="cairn-hero__scene" aria-hidden="true">
+    <div class="cairn-layer cairn-layer--sky" data-depth="0"></div>
+
+    <svg class="cairn-layer cairn-layer--stars" data-depth="0.015" viewBox="0 0 1600 800" preserveAspectRatio="xMidYMax slice">
+      {%- for i in range(140) %}
+      <circle cx="{{ (i * i * 7919 + i * 104729) % 1600 }}" cy="{{ (i * i * 6007 + i * 3571 + 17) % 560 }}" r="{{ 0.5 + (i % 4) * 0.35 }}"
+              style="animation-delay: -{{ (i * 0.37) % 6 }}s"/>
+      {%- endfor %}
+      <line class="cairn-shooting-star" x1="0" y1="0" x2="90" y2="30"/>
+    </svg>
+
+    <div class="cairn-layer cairn-layer--glow" data-depth="0.03"></div>
+
+
+    <svg class="cairn-layer cairn-layer--far" data-depth="0.06" viewBox="0 0 1600 800" preserveAspectRatio="xMidYMax slice">
+      <path d="M0 560 L120 505 L230 540 L360 452 L470 522 L600 432 L720 500 L860 410 L990 492 L1120 440 L1250 502 L1380 424 L1500 482 L1600 452 V800 H0Z"/>
+    </svg>
+
+    <svg class="cairn-layer cairn-layer--mid" data-depth="0.12" viewBox="0 0 1600 800" preserveAspectRatio="xMidYMax slice">
+      <path d="M0 640 C200 585 340 600 480 622 S800 560 980 600 S1300 642 1600 580 V800 H0Z"/>
+    </svg>
+
+    <div class="cairn-layer cairn-layer--cairn" data-depth="0.22">
+      <svg class="cairn-stack" viewBox="22 18 90 100">
+        <path class="cairn-ring" d="M24 100 A40 14 0 0 1 104 100" stroke-width="2" opacity=".5"/>
+        <g class="cairn-stone cairn-stone--1">
+          <path d="M32.16 96.96 L42.32 90.67 Q45.30 88.83 48.80 88.72 L77.50 87.90 Q81.00 87.80 84.24 89.12 L95.55 93.75 Q96.29 94.05 95.51 94.20 L68.12 99.35 Q67.34 99.49 66.54 99.45 L32.28 97.43 Q31.48 97.39 32.16 96.96 Z" fill="#c3c8d4"/>
+          <path d="M31.02 99.36 L66.25 101.43 Q67.04 101.48 67.69 101.960 L77.07 108.92 Q77.72 109.39 76.92 109.43 L48.80 110.67 Q45.30 110.83 42.01 109.64 L34.99 107.11 Q31.70 105.92 30.94 102.51 L30.40 100.10 Q30.23 99.32 31.02 99.36 Z" fill="#8f97aa"/>
+          <path d="M70.62 100.91 L96.77 96.00 Q97.55 95.85 97.25 96.59 L95.91 99.91 Q94.60 103.15 91.35 104.46 L81.13 108.59 Q80.39 108.89 79.74 108.41 L70.48 101.54 Q69.83 101.06 70.62 100.91 Z" fill="#646c80"/>
+        </g>
+        <path class="cairn-ring" d="M104 100 A40 14 0 0 1 24 100" stroke-width="2.2"/>
+        <path class="cairn-key" d="M48.0 108.2 l4.6 4.6 l-4.6 4.6 l-4.6 -4.6 Z"/>
+        <path class="cairn-key" style="animation-delay:-1.2s" d="M84.0 108.5 l3.6 3.6 l-3.6 3.6 l-3.6 -3.6 Z"/>
+        <g class="cairn-stone cairn-stone--2">
+          <path d="M38.04 73.32 L44.22 69.73 Q47.25 67.97 50.74 68.24 L70.01 69.73 Q73.50 70.00 76.55 71.72 L83.79 75.80 Q84.49 76.20 83.69 76.28 L64.33 78.21 Q63.54 78.29 62.75 78.15 L38.13 73.86 Q37.35 73.72 38.04 73.32 Z" fill="#c3c8d4"/>
+          <path d="M36.99 75.69 L62.25 80.10 Q63.03 80.23 63.62 80.78 L70.10 86.83 Q70.68 87.38 69.89 87.33 L50.74 86.18 Q47.25 85.97 44.13 84.38 L40.37 82.47 Q37.25 80.88 36.58 77.44 L36.36 76.34 Q36.21 75.55 36.99 75.690 Z" fill="#8f97aa"/>
+          <path d="M66.59 80.00 L84.81 78.17 Q85.60 78.09 85.32 78.84 L84.74 80.38 Q83.50 83.65 80.19 84.78 L74.08 86.85 Q73.32 87.11 72.74 86.56 L66.38 80.62 Q65.79 80.08 66.59 80.00 Z" fill="#646c80"/>
+        </g>
+        <g class="cairn-stone cairn-stone--3">
+          <path d="M49.79 58.79 L52.90 56.32 Q55.65 54.15 59.15 54.01 L70.00 53.59 Q73.50 53.45 76.61 55.06 L79.93 56.78 Q80.65 57.15 79.87 57.34 L67.39 60.35 Q66.62 60.54 65.82 60.48 L49.96 59.34 Q49.16 59.28 49.79 58.79 Z" fill="#c3c8d4"/>
+          <path d="M48.98 61.27 L65.48 62.46 Q66.27 62.52 66.86 63.07 L70.69 66.68 Q71.28 67.23 70.48 67.28 L59.14 67.94 Q55.65 68.15 52.47 66.70 L52.03 66.50 Q48.85 65.05 48.25 61.60 L48.32 62.00 Q48.18 61.22 48.98 61.27 Z" fill="#8f97aa"/>
+          <path d="M69.51 61.90 L80.87 59.15 Q81.65 58.96 81.40 59.73 L81.36 59.86 Q80.30 63.20 77.19 64.81 L74.30 66.30 Q73.59 66.66 73.01 66.12 L69.31 62.64 Q68.73 62.09 69.51 61.90 Z" fill="#646c80"/>
+        </g>
+        <g class="cairn-stone cairn-stone--cube">
+          <g transform="rotate(-16 66 54.6)">
+            <path d="M54.09 34.43 L64.41 40.33 Q65.10 40.72 65.10 41.52 L65.10 53.29 Q65.10 54.09 64.41 53.69 L55.22 48.44 Q53.40 47.40 53.40 45.30 L53.40 34.84 Q53.40 34.04 54.09 34.43 Z" fill="#e07b2e"/>
+            <path d="M78.60 34.84 L78.60 45.30 Q78.60 47.40 76.78 48.44 L67.59 53.69 Q66.90 54.09 66.90 53.29 L66.90 41.52 Q66.90 40.72 67.59 40.33 L77.91 34.43 Q78.60 34.04 78.60 34.84 Z" fill="#b5520e"/>
+            <path d="M67.82 26.84 L77.00 32.08 Q77.69 32.48 77.00 32.88 L66.69 38.77 Q66.00 39.16 65.31 38.77 L55.00 32.88 Q54.31 32.48 55.00 32.08 L64.18 26.84 Q66.00 25.80 67.82 26.84 Z" fill="#f2a35a"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <svg class="cairn-layer cairn-layer--ground" data-depth="0.32" viewBox="0 0 1600 800" preserveAspectRatio="xMidYMax slice">
+      <path class="cairn-ground" d="M0 712 C400 684 1000 700 1600 676 V800 H0Z"/>
+      <g class="cairn-timeline">
+        <line x1="0" y1="762" x2="1600" y2="762"/>
+        {%- for i in range(81) %}
+        <line x1="{{ i * 20 }}" y1="{{ 754 if i % 5 == 0 else 758 }}" x2="{{ i * 20 }}" y2="762"/>
+        {%- endfor %}
+        {%- for x in [140, 380, 520, 860, 1040, 1300, 1460] %}
+        <path class="cairn-key" style="animation-delay:-{{ loop.index * 0.6 }}s" d="M{{ x }} 754 l8 8 l-8 8 l-8 -8 Z"/>
+        {%- endfor %}
+        <line class="cairn-playhead" x1="0" y1="740" x2="0" y2="784"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="md-grid cairn-hero__inner">
+    <div class="cairn-hero__text">
+      <p class="cairn-eyebrow"><span class="cairn-rec"></span>Production tracker for Blender</p>
+      <h1>Build your film,<br><span>stone by stone.</span></h1>
+      <p class="cairn-lead">Cairn is a production tracker designed for solo or small teams. It helps you to track assets and shot production.</p>
+      <div class="cairn-actions md-typeset">
+        <a href="{{ 'install/' | url }}" class="md-button md-button--primary">Get started</a>
+        <a href="#slideshow" class="md-button">Take the tour</a>
+        <a href="{{ config.repo_url }}" class="cairn-link">View on GitHub &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{#- The content of index.md only: no page title (the hero is the title) and no edit button. -#}
+{% block content %}
+{{ page.content }}
+{% endblock %}
