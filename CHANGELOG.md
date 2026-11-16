@@ -11,6 +11,6 @@ First version: a production tracker and asset manager for Blender projects. A Py
 - **Workspaces**: Home, Sequences, Shots (tracker table, a dash for a task a shot does not have), Assets (library with facets, cards or list), shot and asset pages, Review (compare two versions, draw on a frame, note with the drawing attached), Notes, Settings, plugin workspaces with their icon. Search with Ctrl K. Live updates for every client (Server-Sent Events).
 - **Themes**: dark, light or like the system, per window, shared with plugin pages (`theme.css`, `theme.js`).
 - **Plugins**: server routes, a static UI and a rail icon (`docs/plugins.md`). Plugin folders are added in Settings (loaded at once, remembered in `<data>/server.json`) or given at start.
-- **System tray server** (`py -m cairn start`, `Cairn.bat`, `cairn.sh`): starts detached, survives the terminal and the app window, a second start reuses it. Tray menu: Open Cairn, Open in the browser, API console (`/docs`), Data folder, Server log, Restart, Stop. Also `py -m cairn stop` / `restart` (local only).
+- **System tray server** (`python -m cairn start`, `Cairn.bat`, `cairn.sh`): starts detached, survives the terminal and the app window, a second start reuses it. Tray menu: Open Cairn, Open in the browser, API console (`/docs`), Data folder, Server log, Restart, Stop. Also `python -m cairn stop` / `restart` (local only).
 - **Desktop window**: the Cairn icon in the window and the taskbar, a native folder picker, Open in Blender and Open folder.
 - **Tests**: store and API (with a fake plugin), tray server.

@@ -33,6 +33,6 @@ How Cairn is built, in the order of the repository's history. Read the commits o
 ## Checks
 
 ```powershell
-py -m pytest
+python -m pytest
 cd web; npm run check; npm run build
 ```

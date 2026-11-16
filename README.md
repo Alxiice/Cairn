@@ -11,12 +11,25 @@ This is aimed to be a tool that helps creators to organize and manage their proj
 
 ## Run
 
-Needs Python 3.11+ (tested on 3.13), Node 20+ only to build the UI.
+Needs Python 3.11+ (tested on 3.13), Node 20.19+ only to build the UI. Cairn installs in a virtualenv, `.venv` in this folder:
 
 ```powershell
-py -m pip install -r requirements.txt
+# Windows (PowerShell)
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
 cd web; npm install; npm run build; cd ..
 ```
+
+```sh
+# Linux, macOS
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements.txt
+(cd web && npm install && npm run build)
+```
+
+The `python -m cairn` commands below run in the activated virtualenv. The launchers use `.venv` by themselves: no need to activate it.
 
 Then double-click **`Cairn.bat`** (Windows) or run **`./cairn.sh`** (Linux, macOS). It starts the server **in the system tray**, detached: closing the terminal does not stop it, and closing the app window leaves it running. It then opens the app window. Run it again: it reuses the running server and opens another window.
 
@@ -26,12 +39,12 @@ Linux: pystray needs a tray. On GNOME, install the AppIndicator extension (and `
 
 | Command | What |
 |---|---|
-| `py -m cairn start [--no-window]` | What the launchers run: the tray server if none answers on the port (detached), then the app window. |
-| `py -m cairn stop` / `restart` | Stop or restart the tray server (from its machine only). |
-| `py -m cairn tray` | The tray server in this process (what `start` launches). |
-| `py -m cairn` | The app window on a private server that ends with the window (no tray). |
-| `py -m cairn desktop --server http://host:8765` | The app window on a running server: yours, or someone else's. |
-| `py -m cairn serve --host 0.0.0.0 --port 8765` | The server only, in this terminal: open `http://<machine>:8765` from other machines. **No login yet: trusted network only.** |
+| `python -m cairn start [--no-window]` | What the launchers run: the tray server if none answers on the port (detached), then the app window. |
+| `python -m cairn stop` / `restart` | Stop or restart the tray server (from its machine only). |
+| `python -m cairn tray` | The tray server in this process (what `start` launches). |
+| `python -m cairn` | The app window on a private server that ends with the window (no tray). |
+| `python -m cairn desktop --server http://host:8765` | The app window on a running server: yours, or someone else's. |
+| `python -m cairn serve --host 0.0.0.0 --port 8765` | The server only, in this terminal: open `http://<machine>:8765` from other machines. **No login yet: trusted network only.** |
 | Options | `--host`, `--port` (default 127.0.0.1:8765), `--data DIR` (database), `--plugins DIR …`, `--blender EXE`. Defaults: `~/.cairn/settings.json` (`dataDir`, `pluginFolders`, `blender`, `server`, `host`, `port`). |
 
 **Plugins** (COW for Outer Wilds): **Settings → Plugins → Add the folder**, e.g. `E:\Documents\TRAVAIL\OW\apps\CinematicOW` (**Browse…** in the app window). The plugin loads at once and appears in the left rail; the server remembers the folder (`<data>/server.json`). Folders can also be given at start (`--plugins`, or `pluginFolders` in `~/.cairn/settings.json`).
@@ -48,8 +61,8 @@ Linux: pystray needs a tray. On GNOME, install the AppIndicator extension (and `
 ## Tests
 
 ```powershell
-py -m pip install -r requirements-dev.txt
-py -m pytest                               # store, API (FastAPI TestClient, a fake plugin) and tray server
+python -m pip install -r requirements-dev.txt
+python -m pytest                           # store, API (FastAPI TestClient, a fake plugin) and tray server
 cd web; npm run check; npm run build       # types and build
 ```
 

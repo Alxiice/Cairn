@@ -1,11 +1,11 @@
 """Command line.
 
-    py -m cairn start [--no-window]     the server in the system tray (detached, survives the terminal), then the app window
-    py -m cairn stop | restart          stops or restarts the tray server
-    py -m cairn tray                    the tray server in this process (what `start` launches)
-    py -m cairn                         desktop app on its own private server, closed with the window
-    py -m cairn desktop --server URL    desktop app on a running server (yours in the tray, or someone else's)
-    py -m cairn serve [--host 0.0.0.0] [--port 8765] [--data DIR] [--plugins DIR ...] [--blender EXE]
+    python -m cairn start [--no-window]     the server in the system tray (detached, survives the terminal), then the app window
+    python -m cairn stop | restart          stops or restarts the tray server
+    python -m cairn tray                    the tray server in this process (what `start` launches)
+    python -m cairn                         desktop app on its own private server, closed with the window
+    python -m cairn desktop --server URL    desktop app on a running server (yours in the tray, or someone else's)
+    python -m cairn serve [--host 0.0.0.0] [--port 8765] [--data DIR] [--plugins DIR ...] [--blender EXE]
 Settings: ~/.cairn/settings.json (dataDir, pluginFolders, blender, server, host, port).
 """
 from __future__ import annotations

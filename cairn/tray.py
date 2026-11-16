@@ -1,13 +1,13 @@
 """The Cairn server in the system tray, detached from any terminal.
 
-    py -m cairn start    start the tray server if it is not running (detached), then open the app window
-    py -m cairn tray     the tray server itself, in this process (what `start` launches)
-    py -m cairn stop | restart
+    python -m cairn start    start the tray server if it is not running (detached), then open the app window
+    python -m cairn tray     the tray server itself, in this process (what `start` launches)
+    python -m cairn stop | restart
 
 Tray menu: Open Cairn (the desktop window, on this server), Open in the browser, API console (/docs),
 data folder, log, Restart, Stop. Closing the app window or the terminal leaves the server running; Stop ends it.
 Works where pystray has a backend: Windows, macOS, and Linux with AppIndicator or an X11 tray. Without one, the
-server runs without an icon (`py -m cairn stop` or `restart`).
+server runs without an icon (`python -m cairn stop` or `restart`).
 """
 from __future__ import annotations
 
